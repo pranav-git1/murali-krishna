@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>PIN</title>
+    <style>
+        body {
+            background-color: turquoise;
+        }
+        
+        #input_check {
+            width: 500px;
+            height: 75px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        .btn-submit {
+            width: 100px;
+            height: 75px;
+        }
+        
+        #myDIV {
+            display: none;
+        }
+        
+        .pin {
+            width: 175px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <input type="text" id="input_check">
+        <button onclick="inputing();" class="btn-submit">Submit</button>
+    </center>
+    <div id="myDIV">
+        <input type="number" placeholder="Enter a pin" class="pin" id="input_input">
+        <button id="done" onclick="done();">DONE</button>
+    </div>
+    <script>
+        var pin = "";
+
+        function inputing() {
+            var value = document.getElementById("input_check").value;
+            if (value == "muralikrishna") {
+                console.log("all ok");
+                myFunction();
+            }
+        }
+
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            x.style.display = "block";
+        }
+
+        function done() {
+            pin = document.getElementById("input_input").value;
+            localStorage.setItem("pin", pin);
+            window.location = "index.html";
+        }
+    </script>
+</body>
+
+</html>
